@@ -1,0 +1,33 @@
+digraph Automaton {
+    rankdir="LR";
+
+    0 [label="State 0\n\n&bull; S\nS &rarr; &bull; a S Q\nS &rarr; &bull; a b c"];
+    1 [label="State 1\n\nS &bull;"];
+    2 [label="State 2\n\nS &rarr; a &bull; S Q\nS &rarr; a &bull; b c\nS &rarr; &bull; a S Q\nS &rarr; &bull; a b c\nb Q c &rarr; &bull; b b c c"];
+    3 [label="State 3\n\nS &rarr; a S &bull; Q"];
+    4 [label="State 4\n\nS &rarr; a b &bull; c\nb Q c &rarr; b &bull; b c c\nc Q &rarr; &bull; Q c\nb Q c &rarr; &bull; b b c c"];
+    5 [label="State 5\n\nS &rarr; a S Q &bull;"];
+    6 [label="State 6\n\nS &rarr; a b c &bull;"];
+    7 [label="State 7\n\nb Q c &rarr; b b &bull; c c\nb Q c &rarr; b &bull; b c c\nc Q &rarr; &bull; Q c\nb Q c &rarr; &bull; b b c c"];
+    8 [label="State 8\n\nc Q &rarr; Q &bull; c\nc Q &rarr; &bull; Q c"];
+    9 [label="State 9\n\nb Q c &rarr; b b c &bull; c\nc Q &rarr; &bull; Q c"];
+    10 [label="State 10\n\nc Q &rarr; Q c &bull;"];
+    11 [label="State 11\n\nb Q c &rarr; b b c c &bull;"];
+
+    0 -> 1 [label="S"];
+    0 -> 2 [label="a"];
+    2 -> 3 [label="S"];
+    2 -> 4 [label="b"];
+    2 -> 2 [label="a"];
+    3 -> 5 [label="Q"];
+    4 -> 6 [label="c"];
+    4 -> 7 [label="b"];
+    4 -> 8 [label="Q"];
+    7 -> 9 [label="c"];
+    7 -> 7 [label="b"];
+    7 -> 8 [label="Q"];
+    8 -> 10 [label="c"];
+    8 -> 8 [label="Q"];
+    9 -> 11 [label="c"];
+    9 -> 8 [label="Q"];
+}
